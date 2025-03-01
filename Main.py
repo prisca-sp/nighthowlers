@@ -1,6 +1,5 @@
-import pandas as pd
-
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 import openai
 from sklearn.linear_model import LogisticRegression
@@ -12,7 +11,7 @@ import asyncio
 # 1️⃣ Load Past Health Records
 def load_health_records():
     return r"C:\Users\adithi\Desktop\healthcare_dataset.csv"
-data = pd.read_csv(load_health_records)
+    data = pd.read_csv(load_health_records)
 
 def fetch_date():
     health_data["Date"] = pd.to_datetime(health_data["Date"])
@@ -25,12 +24,12 @@ async def fetch_smartphone_data():
     
     for device in devices:
         print(f"Found Device: {device.name}, Address: {device.address}")
-        if device.name == "Kireeti":
+        if device.name == "phone":
             target_device =  device.address
             break
         
     if not target_device:
-        print("❌ Smartphone 'kireeti' not found. Ensure Bluetooth is enabled.")
+        print("❌ Smartphone 'phone' not found. Ensure Bluetooth is enabled.")
         return None
     
     # Simulated real-time health data from smartphone sensors
@@ -96,10 +95,9 @@ def get_health_recommendations(health_issues):
 
 # ✅ Run the Full Health AI Analysis
 async def run_health_analysis():
-    return r"C:\Users\adithi\Desktop\healthcare_dataset.csv"
-data = pd.read_csv(load_health_records)
-    
-    print("⏳ Connecting to Smartphone (Kireeti)...")
+    health_data = load_health_records()
+
+    print("⏳ Connecting to Smartphone (a)...")
     real_time_data = await fetch_smartphone_data()
     if not real_time_data:
         print("❌ Unable to fetch data from smartphone.")
