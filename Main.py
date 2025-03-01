@@ -1,4 +1,5 @@
 import pandas as pd
+
 import numpy as np
 import matplotlib.pyplot as plt
 import openai
@@ -9,8 +10,8 @@ from bleak import BleakScanner, BleakClient
 import asyncio
 
 # 1️⃣ Load Past Health Records
-def load_health_records("C:\Users\Kiree\OneDrive\Desktop\health_data.csv"):
-    health_data = pd.read_csv("C:\Users\Kiree\OneDrive\Desktop\health_data.csv")
+def load_health_records():
+    health_data = pd.read_csv("C:\Users\adithi\Desktop\healthcare_dataset.csv")
     health_data["Date"] = pd.to_datetime(health_data["Date"])
     return health_data
 
@@ -92,7 +93,7 @@ def get_health_recommendations(health_issues):
 
 # ✅ Run the Full Health AI Analysis
 async def run_health_analysis():
-    file_path = ""C:\Users\Kiree\OneDrive\Desktop\health_data.csv""
+    file_path = "C:\Users\Kiree\OneDrive\Desktop\health_data.csv"
     health_data = load_health_records(file_path)
     
     print("⏳ Connecting to Smartphone (Kireeti)...")
