@@ -96,8 +96,8 @@ def get_health_recommendations(health_issues):
 
 # ✅ Run the Full Health AI Analysis
 async def run_health_analysis():
-    file_path = "C:\Users\\adithi\OneDrive\Desktop\health_data.csv"
-    health_data = load_health_records(file_path)
+    return r"C:\Users\adithi\Desktop\healthcare_dataset.csv"
+data = pd.read_csv(load_health_records)
     
     print("⏳ Connecting to Smartphone (Kireeti)...")
     real_time_data = await fetch_smartphone_data()
