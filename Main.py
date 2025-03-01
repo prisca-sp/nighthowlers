@@ -6,12 +6,15 @@ import openai
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-from bleak import BleakScanner, BleakClient
+from bleak import BleakScanner
 import asyncio
 
 # 1️⃣ Load Past Health Records
 def load_health_records():
-    health_data = pd.read_csv("C:\Users\adithi\Desktop\healthcare_dataset.csv")
+    return r"C:\Users\adithi\Desktop\healthcare_dataset.csv"
+data = pd.read_csv(load_health_records)
+
+def fetch_date():
     health_data["Date"] = pd.to_datetime(health_data["Date"])
     return health_data
 
@@ -93,7 +96,7 @@ def get_health_recommendations(health_issues):
 
 # ✅ Run the Full Health AI Analysis
 async def run_health_analysis():
-    file_path = "C:\Users\Kiree\OneDrive\Desktop\health_data.csv"
+    file_path = "C:\Users\\adithi\OneDrive\Desktop\health_data.csv"
     health_data = load_health_records(file_path)
     
     print("⏳ Connecting to Smartphone (Kireeti)...")
